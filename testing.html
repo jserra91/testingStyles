@@ -1,6 +1,58 @@
-Warning: is_dir(): open_basedir restriction in effect. File(/tmp) is not within the allowed path(s): (/usr/home/jordiserragonzalez.com/:/home/jordiserragonzalez.com/:/usr/home/services/) in /usr/home/jordiserragonzalez.com/web/wiki/includes/libs/filebackend/fsfile/TempFSFile.php on line 90
+<html>
+<head>
+	<script>
+	
+		var actualValue = 0;
 
-Warning: is_dir(): open_basedir restriction in effect. File(/tmp) is not within the allowed path(s): (/usr/home/jordiserragonzalez.com/:/home/jordiserragonzalez.com/:/usr/home/services/) in /usr/home/jordiserragonzalez.com/web/wiki/includes/libs/filebackend/fsfile/TempFSFile.php on line 90
-
-
-
+		window.onload = function() {
+			var w = window.innerWidth;
+			document.getElementById("frame").height = w;
+		};
+		
+		random = function(min,max) {
+			actualValue = Math.floor((Math.random() * max) + min);
+			document.getElementById("px").innerHTML = "Piexeles actuales: " + actualValue + " px";
+			return actualValue;
+		}
+		
+		goVerySmall = function() {
+			if (window.innerWidth > 600) document.getElementById("frame").width = random(200,599);
+			else document.getElementById("frame").width = 400;
+		};
+		
+		goSmall = function() {
+			if (window.innerWidth > 959) document.getElementById("frame").width = random(600,959);
+			else document.getElementById("frame").width = 800;
+		};
+		
+		goMedium = function() {
+			if (window.innerWidth > 1279) document.getElementById("frame").width = random(960,1279);
+			else document.getElementById("frame").width = 1200;
+		};
+		
+		goLarge = function() {
+			if (window.innerWidth > 1919) document.getElementById("frame").width = random(1280,1919);
+			else document.getElementById("frame").width = 1450;
+		};
+	</script>
+</head>
+<body>
+	<div id="container" style="color:red;background:black;" align="center">
+		<div align="left">
+			<p id="px"></p>
+		</div>
+		<div align="right">
+			<div id="vsmall"><button value="Small" onclick="goVerySmall()">XS</button></div>
+			<div id="small"><button value="Small" onclick="goSmall()">SM</button></div>
+			<div id="medium"><button value="Small" onclick="goMedium()">MD</button></div>
+			<div id="large"><button value="Small" onclick="goLarge()">LG</button></div>
+		</div>
+	</div>
+	<!--
+	DISCOMENT HERE!
+	<iframe id="frame" align="center" src="localhost" scrolling="yes">
+		
+	</iframe>
+	-->
+</body>
+</html>
